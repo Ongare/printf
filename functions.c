@@ -1,6 +1,9 @@
 #include "main.h"
-/*
- * * print_char - Prints a char
+
+/************************* PRINT CHAR *************************/
+
+/**
+ * print_char - Prints a char
  * @types: List a of arguments
  * @buffer: Buffer array to handle print
  * @flags:  Calculates active flags
@@ -14,9 +17,9 @@ int print_char(va_list types, char buffer[],
 {
 	char c = va_arg(types, int);
 
-	return (handle_write_char(c, buffer, flags, width, precision, 
+	return (handle_write_char(c, buffer, flags, width, precision, size));
 }
-
+/************************* PRINT A STRING *************************/
 /**
  * print_string - Prints a string
  * @types: List a of arguments
@@ -71,7 +74,9 @@ int print_string(va_list types, char buffer[],
 
 	return (write(1, str, length));
 }
-/** print_percent - Prints a percent sign
+/************************* PRINT PERCENT SIGN *************************/
+/**
+ * print_percent - Prints a percent sign
  * @types: Lista of arguments
  * @buffer: Buffer array to handle print
  * @flags:  Calculates active flags
@@ -92,8 +97,9 @@ int print_percent(va_list types, char buffer[],
 	return (write(1, "%%", 1));
 }
 
-
-/* Print int
+/************************* PRINT INT *************************/
+/**
+ * print_int - Print int
  * @types: Lista of arguments
  * @buffer: Buffer array to handle print
  * @flags:  Calculates active flags
